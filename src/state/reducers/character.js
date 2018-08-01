@@ -13,5 +13,7 @@ export default (state = initialState, action) => {
         ...state,
         race: action.payload.race
       }
+      default:
+        return state
   }
 }
