@@ -1,1 +1,0 @@
-// This file refers to a list of all the possible actions for the app
