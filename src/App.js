@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 // import thunk from 'redux-thunk'
 import reducer from 'state/reducers'
 import "./stylesheets/application.css"
+import Stage1 from "components/Stages/Stage1"
 
 const store = createStore(reducer)
 
@@ -12,9 +13,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <h1>{
-            store.getState().character.race
-          }</h1>
+          <Stage1></Stage1>
         </div>
       </Provider>
     );

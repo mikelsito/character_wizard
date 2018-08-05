@@ -5,3 +5,11 @@ export const setRace = payload => {
     payload
   }
 }
+
+export const SET_CLASS = 'SET_CLASS'
+export const setClass = payload => {
+  return {
+    type: SET_CLASS,
+    payload
+  }
+}
