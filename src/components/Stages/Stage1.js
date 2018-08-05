@@ -9,6 +9,9 @@ class Stage1 extends Component {
   // function. Everything inside the render function gets recreated on every
   // render, so this is more performant, and more 'reacty'.
   handleSubmit = event => {
+    // I'm desctructering props here, but I could as easily call
+    // this.props.actions.setRace(raceValue)
+
     const { actions: { setRace, setClass } } = this.props;
     const raceValue = event.target.race.value;
     const classValue = event.target.class.value;
