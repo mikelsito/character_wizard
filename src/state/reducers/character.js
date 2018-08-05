@@ -30,12 +30,12 @@ export default (state = initialState, action) => {
     case SET_RACE:
       return {
         ...state,
-        race: action.payload.race
+        race: action.payload
       }
     case SET_CLASS:
       return {
         ...state,
-        class: action.payload.class
+        class: action.payload
       }
     default:
       return state

@@ -2,44 +2,37 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-
-import * as setActionCreators from 'state/actions/character'
-// console.log(setActionCreators)
+import { setRace, setClass } from 'state/actions';
 
 class Stage1 extends Component {
-  constructor(props) {
-    super(props);
+  // Pull this out to a component method, instead of defining it in the render
+  // function. Everything inside the render function gets recreated on every
+  // render, so this is more performant, and more 'reacty'.
+  handleSubmit = event => {
+    // I'm desctructering props here, but I could as easily call
+    // this.props.actions.setRace(raceValue)
 
-    const {dispatch} = props;
-    console.log(props, {dispatch})
+    const { actions: { setRace, setClass } } = this.props;
+    const raceValue = event.target.race.value;
+    const classValue = event.target.class.value;
 
-    this.boundActionCreators = bindActionCreators(setActionCreators, dispatch)
-    // console.log(this.boundActionCreators)
-  }
-
-  componentDidMount() {
-    let { dispatch } = this.props
-    let action = setActionCreators.setRace('Human')
-    dispatch(action)
+    event.preventDefault();
+    setRace(raceValue);
+    setClass(classValue);
   }
 
   render() {
-    let { things } = this.props
-
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      console.log("Race: " + event.target[0].value, "Class: " + event.target[1].value)
-    }
-
+    // Adding a 'name' attribute to the inputs allow us to get the values off
+    // event.target by name, instead of by index.
     return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <label>
           Select a Race:
-          <input type="text" value={race}></input>
+          <input name='race' type="text"></input>
         </label>
         <label>
           Select a Class:
-          <input type="text">{props.class}</input>
+          <input name='class' type="text"></input>
         </label>
         <button type="submit">Submit</button>
       </form>
@@ -52,4 +45,29 @@ class Stage1 extends Component {
   }
 }
 
-export default Stage1
+
+// We can access whatever data we want from the redux store here and pass them
+// in as props to our component. In this case, I'm adding all the data from the
+// character store. We don't neccesarily need it, but just using it as an
+// example.
+const mapStateToProps = state => {
+  return {
+    character: state.character,
+  }
+}
+
+// We bind our actionCreators here. We pass them in as props as well, keyed
+// on 'actions', but could pass it in however we like.
+const mapDispatchToProps = dispatch => {
+  return {
+    actions: bindActionCreators(
+      {
+        setRace,
+        setClass
+      },
+      dispatch
+    )
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Stage1)
