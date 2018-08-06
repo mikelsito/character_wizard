@@ -5,7 +5,6 @@ import { Provider } from 'react-redux'
 import reducer from 'state/reducers'
 import "./stylesheets/application.css"
 import ContentHolder from './components/ContentHolder/ContentHolder';
-import { BrowserRouter } from 'react-router-dom';
 
 const store = createStore(
   reducer,
@@ -20,27 +19,11 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
       <Provider store={store}>
         <div className="App">
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <Stage1 nextStage={this.nextStage}/>
-          <Stage2 nextStage={this.nextStage}/>
-=======
-<<<<<<< HEAD
-          <Stage1/>
-          <Stage2/>
-=======
           <ContentHolder />
->>>>>>> changes
->>>>>>> changes
-=======
-          <ContentHolder />
->>>>>>> added router
         </div>
       </Provider>
-      </BrowserRouter>
     );
   }
 }

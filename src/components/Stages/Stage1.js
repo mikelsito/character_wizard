@@ -15,6 +15,9 @@ class Stage1 extends Component {
     event.preventDefault();
     setRace(raceValue);
     setClass(classValue);
+
+    let nextStage = this.props.nextStage;
+    // nextStage();
   }
 
   render() {
@@ -28,7 +31,9 @@ class Stage1 extends Component {
           Select a Class:
           <input name='class' type="text"></input>
         </label>
-        <button type="submit" onClick={this.props.nextStage}>Submit</button>
+        <Link to="/stage2">
+          <button type="submit">Submit</button>
+        </Link>
       </form>
     )
   }
