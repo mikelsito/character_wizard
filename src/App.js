@@ -4,10 +4,14 @@ import { Provider } from 'react-redux'
 // import thunk from 'redux-thunk'
 import reducer from 'state/reducers'
 import "./stylesheets/application.css"
+<<<<<<< HEAD
 
 // Testing stages for development
 import Stage1 from "components/Stages/Stage1"
 import Stage2 from "components/Stages/Stage2"
+=======
+import ContentHolder from './components/ContentHolder/ContentHolder';
+>>>>>>> changes
 
 const store = createStore(
   reducer,
@@ -24,8 +28,17 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
+<<<<<<< HEAD
           <Stage1 nextStage={this.nextStage}/>
           <Stage2 nextStage={this.nextStage}/>
+=======
+<<<<<<< HEAD
+          <Stage1/>
+          <Stage2/>
+=======
+          <ContentHolder />
+>>>>>>> changes
+>>>>>>> changes
         </div>
       </Provider>
     );
