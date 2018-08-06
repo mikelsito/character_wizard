@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { setRace, setClass } from 'state/actions';
 

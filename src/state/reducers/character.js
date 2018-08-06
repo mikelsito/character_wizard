@@ -4,9 +4,12 @@ import {
   SET_BACKGROUND,
   SET_ALIGNMENT,
   SET_CHARACTERNAME,
+  SET_CHARACTERHEIGHT,
+  SET_CHARACTERWEIGHT,
+  SET_CHARACTERSIZE,
+  SET_CHARACTERSPEED,
   SET_ABILITIES
 } from '../actions'
-import { SET_ABILITIES } from '../actions/character';
 
 export const initialState = {
   id: null,
@@ -58,6 +61,26 @@ export default (state = initialState, action) => {
       return {
         ...state,
         characterName: action.payload
+      }
+    case SET_CHARACTERHEIGHT:
+      return {
+        ...state,
+        height: action.payload
+      }
+    case SET_CHARACTERWEIGHT:
+      return {
+        ...state,
+        weight: action.payload
+      }
+    case SET_CHARACTERSIZE:
+      return {
+        ...state,
+        size: action.payload
+      }
+    case SET_CHARACTERSPEED:
+      return {
+        ...state,
+        speed: action.payload
       }
     case SET_ABILITIES:
       return {
