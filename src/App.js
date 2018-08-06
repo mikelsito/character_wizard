@@ -15,12 +15,17 @@ const store = createStore(
 )
 
 class App extends Component {
+
+  nextStage = event => {
+    console.log("Parent Logger")
+  }
+
   render() {
     return (
       <Provider store={store}>
         <div className="App">
-          <Stage1/>
-          <Stage2/>
+          <Stage1 nextStage={this.nextStage}/>
+          <Stage2 nextStage={this.nextStage}/>
         </div>
       </Provider>
     );

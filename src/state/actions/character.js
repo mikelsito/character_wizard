@@ -30,10 +30,42 @@ export const setAlignment = payload => {
   }
 }
 
-export const SET_CHARACTERNAME = 'SET_NAME'
+export const SET_CHARACTERNAME = 'SET_CHARACTERNAME'
 export const setCharacterName = payload => {
   return {
     type: SET_CHARACTERNAME,
+    payload
+  }
+}
+
+export const SET_CHARACTERHEIGHT = 'SET_CHARACTERHEIGHT'
+export const setCharacterHeight = payload => {
+  return {
+    type: SET_CHARACTERHEIGHT,
+    payload
+  }
+}
+
+export const SET_CHARACTERWEIGHT = 'SET_CHARACTERWEIGHT'
+export const setCharacterWeight = payload => {
+  return {
+    type: SET_CHARACTERWEIGHT,
+    payload
+  }
+}
+
+export const SET_CHARACTERSIZE = 'SET_CHARACTERSIZE'
+export const setCharacterSize = payload => {
+  return {
+    type: SET_CHARACTERSIZE,
+    payload
+  }
+}
+
+export const SET_CHARACTERSPEED = 'SET_CHARACTERSPEED'
+export const setCharacterSpeed = payload => {
+  return {
+    type: SET_CHARACTERSPEED,
     payload
   }
 }
