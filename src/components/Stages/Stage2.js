@@ -33,7 +33,7 @@ class Stage2 extends Component {
           Enter your Character's Name:
           <input name='characterName' type='text'></input>
         </label>
-        <button type='submit'>Submit</button>
+        <button type='submit' onClick={this.props.nextStage}>Submit</button>
       </form>
     )
   }

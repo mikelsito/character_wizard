@@ -1,7 +1,12 @@
 import {
   SET_RACE,
-  SET_CLASS
+  SET_CLASS,
+  SET_BACKGROUND,
+  SET_ALIGNMENT,
+  SET_CHARACTERNAME,
+  SET_ABILITIES
 } from '../actions'
+import { SET_ABILITIES } from '../actions/character';
 
 export const initialState = {
   id: null,
@@ -16,7 +21,9 @@ export const initialState = {
   size: null,
   speed: null,
   abilityModifiers: {
-    strength: [],
+    strength: {
+      
+    },
     dexterity: [],
     constitution: [],
     intelligence: [],
@@ -36,6 +43,26 @@ export default (state = initialState, action) => {
       return {
         ...state,
         class: action.payload
+      }
+    case SET_BACKGROUND:
+      return {
+        ...state,
+        background: action.payload
+      }
+    case SET_ALIGNMENT:
+      return {
+        ...state,
+        alignment: action.payload
+      }
+    case SET_CHARACTERNAME:
+      return {
+        ...state,
+        characterName: action.payload
+      }
+    case SET_ABILITIES:
+      return {
+        ...state,
+        abilityModifiers: action.payload
       }
     default:
       return state
