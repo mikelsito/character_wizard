@@ -27,7 +27,7 @@ class Stage1 extends Component {
           Select a Class:
           <input name='class' type="text"></input>
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit" onClick={this.props.nextStage}>Submit</button>
       </form>
     )
   }

@@ -21,7 +21,9 @@ export const initialState = {
   size: null,
   speed: null,
   abilityModifiers: {
-    strength: [],
+    strength: {
+      
+    },
     dexterity: [],
     constitution: [],
     intelligence: [],
