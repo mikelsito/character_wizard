@@ -3,6 +3,8 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { setRace, setClass } from 'state/actions';
 
+import { Link } from 'react-router-dom';
+
 class Stage1 extends Component {
 
   handleSubmit = event => {
@@ -13,6 +15,9 @@ class Stage1 extends Component {
     event.preventDefault();
     setRace(raceValue);
     setClass(classValue);
+
+    let nextStage = this.props.nextStage;
+    // nextStage();
   }
 
   render() {
@@ -26,7 +31,9 @@ class Stage1 extends Component {
           Select a Class:
           <input name='class' type="text"></input>
         </label>
-        <button type="submit" onClick={this.props.nextStage}>Submit</button>
+        <Link to="/stage2">
+          <button type="submit">Submit</button>
+        </Link>
       </form>
     )
   }
