@@ -13,10 +13,6 @@ const store = createStore(
 
 class App extends Component {
 
-  nextStage = event => {
-    console.log("Parent Logger")
-  }
-
   render() {
     return (
       <Provider store={store}>

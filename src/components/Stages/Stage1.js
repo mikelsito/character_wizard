@@ -17,7 +17,7 @@ class Stage1 extends Component {
     setClass(classValue);
 
     let nextStage = this.props.nextStage;
-    // nextStage();
+    nextStage("stage2");
   }
 
   render() {
@@ -31,9 +31,7 @@ class Stage1 extends Component {
           Select a Class:
           <input name='class' type="text"></input>
         </label>
-        <Link to="/stage2">
           <button type="submit">Submit</button>
-        </Link>
       </form>
     )
   }
