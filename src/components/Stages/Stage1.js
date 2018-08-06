@@ -5,13 +5,8 @@ import { connect } from 'react-redux'
 import { setRace, setClass } from 'state/actions';
 
 class Stage1 extends Component {
-  // Pull this out to a component method, instead of defining it in the render
-  // function. Everything inside the render function gets recreated on every
-  // render, so this is more performant, and more 'reacty'.
-  handleSubmit = event => {
-    // I'm desctructering props here, but I could as easily call
-    // this.props.actions.setRace(raceValue)
 
+  handleSubmit = event => {
     const { actions: { setRace, setClass } } = this.props;
     const raceValue = event.target.race.value;
     const classValue = event.target.class.value;
@@ -22,8 +17,6 @@ class Stage1 extends Component {
   }
 
   render() {
-    // Adding a 'name' attribute to the inputs allow us to get the values off
-    // event.target by name, instead of by index.
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
@@ -37,27 +30,16 @@ class Stage1 extends Component {
         <button type="submit">Submit</button>
       </form>
     )
-
-    Stage1.propTypes = {
-      race: PropTypes.string.isRequired,
-      class: PropTypes.string.isRequired
-    }
   }
 }
 
-
-// We can access whatever data we want from the redux store here and pass them
-// in as props to our component. In this case, I'm adding all the data from the
-// character store. We don't neccesarily need it, but just using it as an
-// example.
 const mapStateToProps = state => {
   return {
-    character: state.character,
+    race: state.character.race,
+    class: state.character.class,
   }
 }
 
-// We bind our actionCreators here. We pass them in as props as well, keyed
-// on 'actions', but could pass it in however we like.
 const mapDispatchToProps = dispatch => {
   return {
     actions: bindActionCreators(
