@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { setRace, setClass } from 'state/actions';
 
-import { Link } from 'react-router-dom';
+import { findSpecificRace } from '../../external/5eAPI/queries'
 
 class Stage1 extends Component {
 
@@ -18,6 +18,11 @@ class Stage1 extends Component {
 
     let nextStage = this.props.nextStage;
     nextStage("stage2");
+  }
+
+  componentDidMount() {
+    console.log("Stage1 mounted")
+    findSpecificRace('http://www.dnd5eapi.co/api/races/9');
   }
 
   render() {

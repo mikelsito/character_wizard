@@ -1,5 +1,6 @@
 import {
   SET_RACE,
+  SET_IMAGE,
   SET_CLASS,
   SET_BACKGROUND,
   SET_ALIGNMENT,
@@ -15,6 +16,7 @@ export const initialState = {
   id: null,
   username: null,
   race: null,
+  image: null,
   class: null,
   background: null,
   alignment: null,
@@ -41,6 +43,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         race: action.payload
+      }
+    case SET_IMAGE:
+      return {
+        ...state,
+        image: action.payload
       }
     case SET_CLASS:
       return {

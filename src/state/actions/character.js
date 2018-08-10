@@ -6,6 +6,14 @@ export const setRace = payload => {
   }
 }
 
+export const SET_IMAGE = 'SET_IMAGE'
+export const setAction = payload => {
+  return {
+    type: SET_IMAGE,
+    payload
+  }
+}
+
 export const SET_CLASS = 'SET_CLASS'
 export const setClass = payload => {
   return {
