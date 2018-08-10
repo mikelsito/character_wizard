@@ -5,10 +5,6 @@ import { HashRouter, Route } from 'react-router-dom';
 import Stage1 from '../Stages/Stage1';
 import Stage2 from '../Stages/Stage2';
 
-const nextStage = (stage) => {
-    window.location.hash = "/" + stage;
-}
-
 const BuildHolder = () => (
     <HashRouter>
     <div className="sequence-holder grid-wrapper grid-wrapper--full">

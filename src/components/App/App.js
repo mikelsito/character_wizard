@@ -1,21 +1,23 @@
-import React, { Component } from 'react';
-import { createStore, applyMiddleware} from 'redux';
-import { Provider } from 'react-redux';
+import React, { Component } from 'react'
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
 // import thunk from 'redux-thunk'
-import reducer from 'state/reducers';
-import ContentHolder from '../ContentHolder/ContentHolder';
+import reducer from 'state/reducers'
+import "stylesheets/application.css"
+import ContentHolder from 'components/ContentHolder/ContentHolder';
 
-import '../../stylesheets/application.css';
-
-const store = createStore(reducer)
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 class App extends Component {
+
   render() {
     return (
       <Provider store={store}>
         <div className="App">
-          {/* Menu Goes here */}
-          <ContentHolder/>
+          <ContentHolder />
         </div>
       </Provider>
     );
