@@ -1,6 +1,6 @@
 import React from 'react';
 // import the sequence holder components
-import BuildHolder from '../Build/BuildHolder';
+import BuildHolder from 'components/BuildHolder/BuildHolder';
 
 const ContentHolder = () => (
     <div className="content-holder">
