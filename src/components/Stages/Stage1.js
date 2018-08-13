@@ -16,9 +16,14 @@ class Stage1 extends Component {
             <div>
                 <BuildLeft />
                 {
+<<<<<<< HEAD
                     this.props.allRaces ? 
                     <BuildRight list={this.props.allRaces} />
                     : null
+=======
+                    !this.props.allRaces ? null :
+                    <BuildRight raceList={this.props.allRaces} />
+>>>>>>> applied conor's changes
                 }
             </div>
         );
