@@ -7,9 +7,10 @@ const urlBaseSegment = 'http://www.dnd5eapi.co/api/'
 export const findAllRaces = () => {
   let queryURL = urlBaseSegment + 'races';
 
-  axios.get(queryURL)
+  // You gotta make sure to return here!!
+  return axios.get(queryURL)
   .then(res => {
-    console.log(res.data.results);
+    console.log('RESULTS', res.data.results);
     return res.data.results;
   })
 }
@@ -17,7 +18,7 @@ export const findAllRaces = () => {
 export const findSpecificRace = (query) => {
   let queryURL = urlBaseSegment + 'races/' + query;
 
-  axios.get(queryURL)
+  return axios.get(queryURL)
   .then(res => {
     console.log(res.data);
     return res.data;
