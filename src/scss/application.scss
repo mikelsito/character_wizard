@@ -23,3 +23,7 @@
 @import "ui/main";
 
 @import "ui/print";
+
+// Import modules
+@import "../components/ContentHolder/ContentHolder";
+@import "../components/Build/Card";

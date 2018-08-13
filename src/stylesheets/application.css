@@ -1912,6 +1912,14 @@ body {
   width: 100%;
 }
 
+.Card {
+  width: 95%;
+  padding: 10px;
+  background: lightgrey;
+  margin: 10px auto;
+  color: blue;
+}
+
 body {
   background: #7abcb5;
   min-height: 500vh;
@@ -1968,6 +1976,19 @@ body {
   .hidden-print {
     display: none !important;
   }
+}
+.content-holder {
+  min-height: 500px;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+.Card {
+  width: 95%;
+  padding: 10px;
+  background: lightgrey;
+  margin: 10px auto;
+  color: blue;
 }
 
 /*# sourceMappingURL=application.css.map */

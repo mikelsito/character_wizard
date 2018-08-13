@@ -1,9 +1,10 @@
 import React from 'react';
+import './Card.css';
 
 const Card = props => {
     return (
-        <div className="Card">
-
+        <div onClick={props.click} className="Card">
+            <h3>{props.race}</h3>
         </div>
     )
 }
