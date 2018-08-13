@@ -16,16 +16,9 @@ class Stage1 extends Component {
             <div>
                 <BuildLeft />
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
                     this.props.allRaces ? 
-                    <BuildRight list={this.props.allRaces} />
+                    <BuildRight location="/stage2" list={this.props.allRaces} />
                     : null
-=======
-=======
->>>>>>> started button
-                    !this.props.allRaces ? null :
-                    <BuildRight raceList={this.props.allRaces} />
                 }
             </div>
         );
