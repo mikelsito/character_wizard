@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { fetchRaces } from 'state/actions'
+import { fetchClasses } from 'state/actions'
 
 import { BuildLeft, BuildRight } from 'components/Build'
 
-class Stage1 extends Component {
+class Stage2 extends Component {
 
     componentDidMount() {
-        this.props.actions.fetchRaces();
+        this.props.actions.fetchClasses();
     }
 
     render() {
@@ -16,9 +16,8 @@ class Stage1 extends Component {
             <div>
                 <BuildLeft />
                 {
-                    this.props.allRaces ? 
-                    <BuildRight list={this.props.allRaces} />
-                    : null
+                    !this.props.allClasses ? null :
+                    <BuildRight list={this.props.allClasses} />
                 }
             </div>
         );
@@ -27,7 +26,7 @@ class Stage1 extends Component {
 
 const mapStateToProps = state => {
     return {
-        allRaces: state.data.allRaces
+        allClasses: state.data.allClasses
     }
 }
 
@@ -35,11 +34,11 @@ const mapDisptachToProps = dispatch => {
     return {
         actions: bindActionCreators(
             {
-                fetchRaces
+                fetchClasses
             },
             dispatch
         )
     }
 }
 
-export default connect(mapStateToProps, mapDisptachToProps)(Stage1);
+export default connect(mapStateToProps, mapDisptachToProps)(Stage2);

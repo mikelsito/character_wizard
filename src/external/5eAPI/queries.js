@@ -20,7 +20,17 @@ export const findSpecificRace = (query) => {
 
   return axios.get(queryURL)
   .then(res => {
-    console.log(res.data);
+    console.log('RESULTS', res.data);
     return res.data;
+  })
+}
+
+export const findAllClasses = () => {
+  let queryURL = urlBaseSegment + 'classes';
+
+  return axios.get(queryURL)
+  .then(res => {
+    console.log('RESULTS', res.data.results);
+    return res.data.results;
   })
 }
