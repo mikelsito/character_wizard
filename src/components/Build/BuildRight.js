@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import Card from 'components/Build/Card';
+import {Stage1, Stage2} from 'components/Stages'
 
 import './BuildRight.css';
 
 // import object
+// import * as races from 'external/5eAPI/races';
+
+console.log(Stage1.races);
 
 class BuildRight extends Component {
     
@@ -13,7 +17,7 @@ class BuildRight extends Component {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col">
-                            <Card />
+                            <Card click={this.props.findSpecificRace} />
                             <Card />
                             <Card />
                             <Card />
