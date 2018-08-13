@@ -7,7 +7,6 @@ import './BuildRight.css';
 class BuildRight extends Component {
 
     componentDidMount() {
-        // console.log('BuildRight raceList: ', this.props.raceList);
     }
     
     render() {
@@ -19,7 +18,7 @@ class BuildRight extends Component {
                             {
                                 this.props.raceList ?
                                 this.props.raceList.map((race, index) => {
-                                    return <Card key={index} race={race.string} />
+                                    return <Card key={index + 1} race={race.name} />
                                 }) : null
                             }
                         </div>

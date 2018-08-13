@@ -16,8 +16,9 @@ class Stage1 extends Component {
             <div>
                 <BuildLeft />
                 {
-                    !this.props.allRaces ? null :
-                    <BuildRight raceList={this.allRaces} />
+                    this.props.allRaces ? 
+                    <BuildRight raceList={this.props.allRaces} />
+                    : null
                 }
             </div>
         );
