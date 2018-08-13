@@ -6,7 +6,6 @@ import './ContentHolder.css';
 
 const ContentHolder = () => (
     <div className="content-holder">
-    {/* First sequence holder */}
     <BuildHolder/>
     </div>
 )

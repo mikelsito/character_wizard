@@ -9,7 +9,8 @@ export const findAllRaces = () => {
 
   axios.get(queryURL)
   .then(res => {
-    console.log(res.data);
+    console.log(res.data.results);
+    return res.data.results;
   })
 }
 
@@ -19,5 +20,6 @@ export const findSpecificRace = (query) => {
   axios.get(queryURL)
   .then(res => {
     console.log(res.data);
+    return res.data;
   })
 }

@@ -4,7 +4,7 @@ import './Card.css';
 const Card = props => {
     return (
         <div onClick={props.click} className="Card">
-            <h3>Title</h3>
+            <h3>{props.race}</h3>
         </div>
     )
 }

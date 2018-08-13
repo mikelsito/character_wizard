@@ -1,64 +1,29 @@
-import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-import { setRace, setClass } from 'state/actions';
-
-import { findSpecificRace } from '../../external/5eAPI/queries'
+import React, { Component } from 'react';
+import races from 'external/5eAPI/races';
+import { findSpecificRace, findAllRaces} from 'external/5eAPI/queries';
+import BuildLeft from 'components/Build/BuildLeft';
+import BuildRight from 'components/Build/BuildRight';
 
 class Stage1 extends Component {
 
-  handleSubmit = event => {
-    const { actions: { setRace, setClass } } = this.props;
-    const raceValue = event.target.race.value;
-    const classValue = event.target.class.value;
+    componentDidMount() {
+        const raceList = [];
+        findAllRaces();
+        console.log(raceList);
+    }
 
-    event.preventDefault();
-    setRace(raceValue);
-    setClass(classValue);
-
-    let nextStage = this.props.nextStage;
-    nextStage("stage2");
-  }
-
-  componentDidMount() {
-    console.log("Stage1 mounted")
-    findSpecificRace('http://www.dnd5eapi.co/api/races/9');
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Select a Race:
-          <input name='race' type="text"></input>
-        </label>
-        <label>
-          Select a Class:
-          <input name='class' type="text"></input>
-        </label>
-          <button type="submit">Submit</button>
-      </form>
-    )
-  }
+    render() {
+        return (
+            <div>
+            <BuildLeft />
+            {
+                this.raceList ?
+                <BuildRight raceList={this.raceList} />
+                : null
+            }
+            </div>
+        );
+    }
 }
 
-const mapStateToProps = state => {
-  return {
-    race: state.character.race,
-    class: state.character.class,
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    actions: bindActionCreators(
-      {
-        setRace,
-        setClass
-      },
-      dispatch
-    )
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Stage1)
+export default Stage1;

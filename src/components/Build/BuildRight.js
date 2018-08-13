@@ -4,12 +4,11 @@ import {Stage1, Stage2} from 'components/Stages'
 
 import './BuildRight.css';
 
-// import object
-// import * as races from 'external/5eAPI/races';
-
-console.log(Stage1.races);
-
 class BuildRight extends Component {
+
+    componentDidMount() {
+        // console.log('BuildRight raceList: ', this.props.raceList);
+    }
     
     render() {
         return (
@@ -17,26 +16,12 @@ class BuildRight extends Component {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col">
-                            <Card click={this.props.findSpecificRace} />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
+                            {
+                                this.props.raceList ?
+                                this.props.raceList.map((race, index) => {
+                                    return <Card key={index} race={race.string} />
+                                }) : null
+                            }
                         </div>
                     </div>
                 </div>
