@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { fetchRaces } from 'state/actions'
+import { fetchRaces, findSpecificRace } from 'state/actions'
 
 import { BuildLeft, BuildRight } from 'components/Build'
 

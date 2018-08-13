@@ -6,8 +6,8 @@ class BuildHolder extends Component {
     render() {
         return (
             <div>
-                {/* <Stage1 /> */}
-                <Stage2 />
+                <Stage1 />
+                {/* <Stage2 /> */}
             </div>
         )
     }

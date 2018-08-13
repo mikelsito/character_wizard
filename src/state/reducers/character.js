@@ -7,8 +7,6 @@ import {
   SET_CHARACTERNAME,
   SET_CHARACTERHEIGHT,
   SET_CHARACTERWEIGHT,
-  SET_CHARACTERSIZE,
-  SET_CHARACTERSPEED,
   SET_ABILITIES
 } from '../actions'
 
@@ -42,7 +40,9 @@ export default (state = initialState, action) => {
     case SET_RACE:
       return {
         ...state,
-        race: action.payload
+        race: action.payload,
+        size: action.paylaod,
+        speed: action.payload
       }
     case SET_IMAGE:
       return {
@@ -78,16 +78,6 @@ export default (state = initialState, action) => {
       return {
         ...state,
         weight: action.payload
-      }
-    case SET_CHARACTERSIZE:
-      return {
-        ...state,
-        size: action.payload
-      }
-    case SET_CHARACTERSPEED:
-      return {
-        ...state,
-        speed: action.payload
       }
     case SET_ABILITIES:
       return {
