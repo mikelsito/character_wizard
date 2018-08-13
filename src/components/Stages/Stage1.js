@@ -5,7 +5,7 @@ import { fetchRaces } from 'state/actions'
 
 import { BuildLeft, BuildRight } from 'components/Build'
 
-class Stage2 extends Component {
+class Stage1 extends Component {
 
     componentDidMount() {
         this.props.actions.fetchRaces();
@@ -17,7 +17,7 @@ class Stage2 extends Component {
                 <BuildLeft />
                 {
                     this.props.allRaces ? 
-                    <BuildRight raceList={this.props.allRaces} />
+                    <BuildRight list={this.props.allRaces} />
                     : null
                 }
             </div>
@@ -42,4 +42,4 @@ const mapDisptachToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDisptachToProps)(Stage2);
+export default connect(mapStateToProps, mapDisptachToProps)(Stage1);

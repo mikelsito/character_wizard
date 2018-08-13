@@ -1,9 +1,11 @@
 import {
-  RECEIVE_RACES
+  RECEIVE_RACES,
+  RECEIVE_CLASSES
 } from '../actions'
 
 export const initialState = {
-  allRaces: []
+  allRaces: [],
+  allClasses: [],
 }
 
 export default (state = initialState, action) => {
@@ -14,6 +16,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         allRaces: action.payload,
+      }
+    case RECEIVE_CLASSES:
+      console.log(action.payload)
+      return {
+        ...state,
+        allClasses: action.payload
       }
     default:
       return state

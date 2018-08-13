@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Card from 'components/Build/Card';
-import {Stage1, Stage2} from 'components/Stages'
 
 import './BuildRight.css';
 
@@ -16,9 +15,9 @@ class BuildRight extends Component {
                     <div className="row">
                         <div className="col">
                             {
-                                this.props.raceList ?
-                                this.props.raceList.map((race, index) => {
-                                    return <Card key={index + 1} race={race.name} />
+                                this.props.list ?
+                                this.props.list.map((item, index) => {
+                                    return <Card key={index + 1} title={item.name} />
                                 }) : null
                             }
                         </div>
