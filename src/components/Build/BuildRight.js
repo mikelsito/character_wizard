@@ -15,9 +15,15 @@ class BuildRight extends Component {
                     <div className="row">
                         <div className="col">
                             {
+<<<<<<< HEAD
                                 this.props.list ?
                                 this.props.list.map((item, index) => {
                                     return <Card key={index + 1} title={item.name} />
+=======
+                                this.props.raceList ?
+                                this.props.raceList.map((race, index) => {
+                                    return <Card key={index + 1} race={race.name} />
+>>>>>>> started button
                                 }) : null
                             }
                         </div>
