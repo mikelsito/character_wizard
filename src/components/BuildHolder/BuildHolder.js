@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import BuildRight from 'components/Build/BuildRight';
 import BuildLeft from 'components/Build/BuildLeft';
 
-import { Stage1, Stage2 } from 'components/Stages';
+import { Stage1 } from 'components/Stages';
 
 class BuildHolder extends Component {
     render() {
