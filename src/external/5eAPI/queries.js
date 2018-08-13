@@ -4,8 +4,19 @@ import races from 'external/5eAPI/races'
 
 const urlBaseSegment = 'http://www.dnd5eapi.co/api/'
 
+export const findAllRaces = () => {
+  let queryURL = urlBaseSegment + 'races';
+
+  axios.get(queryURL)
+  .then(res => {
+    console.log(res.data);
+  })
+}
+
 export const findSpecificRace = (query) => {
-  axios.get(query)
+  let queryURL = urlBaseSegment + 'races/' + query;
+
+  axios.get(queryURL)
   .then(res => {
     console.log(res.data);
   })
