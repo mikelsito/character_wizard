@@ -20,10 +20,10 @@ To help understand what's going on...this could be rewritten as:
 
 export const fetchRaces = payload => {
   return (dispatch) => {
-    return {
+    return dispatch({
       type: FETCH_RACES,
-      payload: findAllRaces().then(races => dispatch(receiveRaces))
-    }
+      payload: findAllRaces().then(races => dispatch(receiveRaces(races)))
+    })
   }
 }
 
