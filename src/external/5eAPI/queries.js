@@ -24,3 +24,12 @@ export const findSpecificRace = (query) => {
     return res.data;
   })
 }
+
+export const findAllClasses = () => {
+  let queryURL = urlBaseSegment + 'classes';
+
+  axios.get(queryURL)
+  .then(res => {
+    console.log(res.data.results);
+  })
+}

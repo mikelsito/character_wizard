@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { fetchRaces } from 'state/actions'
+// import { fetchClasses } from 'state/actions'
 
 import { BuildLeft, BuildRight } from 'components/Build'
+import { findAllClasses } from 'external/5eAPI/queries'
 
-class Stage2 extends Component {
+class Stage1 extends Component {
 
     componentDidMount() {
-        this.props.actions.fetchRaces();
+        // this.props.actions.fetchClasses();
+        findAllClasses();
     }
 
     render() {
@@ -16,9 +18,8 @@ class Stage2 extends Component {
             <div>
                 <BuildLeft />
                 {
-                    this.props.allRaces ? 
-                    <BuildRight raceList={this.props.allRaces} />
-                    : null
+                    !this.props.allRaces ? null :
+                    <BuildRight classList={this.allClasses} />
                 }
             </div>
         );
@@ -27,7 +28,7 @@ class Stage2 extends Component {
 
 const mapStateToProps = state => {
     return {
-        allRaces: state.data.allRaces
+        // allClasses: state.data.allClasses
     }
 }
 
@@ -35,11 +36,11 @@ const mapDisptachToProps = dispatch => {
     return {
         actions: bindActionCreators(
             {
-                fetchRaces
+                // fetchClasses
             },
             dispatch
         )
     }
 }
 
-export default connect(mapStateToProps, mapDisptachToProps)(Stage2);
+export default connect(mapStateToProps, mapDisptachToProps)(Stage1);
