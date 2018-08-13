@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { FETCH_RACES } from 'state/actions'
+import { fetchRaces } from 'state/actions'
 
-import races from 'external/5eAPI/races';
-import { findSpecificRace, findAllRaces} from 'external/5eAPI/queries';
-
-import BuildLeft from 'components/Build/BuildLeft';
-import BuildRight from 'components/Build/BuildRight';
+import { BuildLeft, BuildRight } from 'components/Build'
 
 class Stage1 extends Component {
 
@@ -34,7 +30,7 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDisptachToProps = state => {
+const mapDisptachToProps = dispatch => {
     return {
         actions: bindActionCreators(
             {
@@ -45,4 +41,4 @@ const mapDisptachToProps = state => {
     }
 }
 
-export default connect(mapDisptachToProps, mapStateToProps)(Stage1);
+export default connect(mapStateToProps, mapDisptachToProps)(Stage1);
