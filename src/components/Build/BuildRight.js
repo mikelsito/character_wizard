@@ -23,12 +23,17 @@ class BuildRight extends Component {
                     </div>
                 </div>
                 <div className="btn-holder">
-                {
-                    !this.props.selection ? null :
-                    <Link to={this.props.location}>
-                        <Button instruction="Next" />
-                    </Link>
-                }
+                    {
+                        !this.props.selection ? null :
+                        <div>
+                            <Link   to={this.props.previousLocation}>
+                                <Button instruction="Previous" />
+                            </Link>
+                            <Link to={this.props.location}>
+                                <Button instruction="Next" />
+                            </Link>
+                        </div>
+                    }
                 </div>
             </div>
         )

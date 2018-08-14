@@ -17,7 +17,11 @@ class Stage2 extends Component {
                 <BuildLeft />
                 {
                     !this.props.allClasses ? null :
+<<<<<<< HEAD
                     <BuildRight selection={true} location="/stage3" list={this.props.allClasses} click={this.props.actions.fetchClass} />
+=======
+                    <BuildRight selection={true} previousLocation="/stage1" location="/stage3" list={this.props.allClasses} />
+>>>>>>> added previous button
                 }
             </div>
         );
