@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { fetchRaces } from 'state/actions'
+import { fetchRaces, fetchRace } from 'state/actions'
 
 import { BuildLeft, BuildRight } from 'components/Build'
 
 class Stage1 extends Component {
-
+    
     componentDidMount() {
         this.props.actions.fetchRaces();
+    }
+
+    clickHandler(arg) {
+        console.log("Number " + arg + " has been clicked!")
     }
 
     render() {
@@ -17,7 +21,7 @@ class Stage1 extends Component {
                 <BuildLeft />
                 {
                     this.props.allRaces ? 
-                    <BuildRight location="/stage2" list={this.props.allRaces} />
+                    <BuildRight selection={true} location="/stage2" list={this.props.allRaces} click={this.props.actions.fetchRace}/>
                     : null
                 }
             </div>
@@ -27,7 +31,8 @@ class Stage1 extends Component {
 
 const mapStateToProps = state => {
     return {
-        allRaces: state.data.allRaces
+        allRaces: state.data.allRaces,
+        race: state.character.race
     }
 }
 
@@ -35,7 +40,8 @@ const mapDisptachToProps = dispatch => {
     return {
         actions: bindActionCreators(
             {
-                fetchRaces
+                fetchRaces,
+                fetchRace
             },
             dispatch
         )

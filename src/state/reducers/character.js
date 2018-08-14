@@ -1,40 +1,27 @@
 import {
-  SET_RACE,
-  SET_IMAGE,
-  SET_CLASS,
-  SET_BACKGROUND,
-  SET_ALIGNMENT,
-  SET_CHARACTERNAME,
-  SET_CHARACTERHEIGHT,
-  SET_CHARACTERWEIGHT,
-  SET_CHARACTERSIZE,
-  SET_CHARACTERSPEED,
-  SET_ABILITIES
+  SET_RACE
 } from '../actions'
 
 export const initialState = {
   id: null,
   username: null,
   race: null,
-  image: null,
+  raceRefUrl: null,
   class: null,
   background: null,
   alignment: null,
+  alignmentDescription: null,
   characterName: null,
   height: null,
   weight: null,
+  age: null,
+  ageDescription: null,
   size: null,
   speed: null,
-  abilityModifiers: {
-    strength: {
-      
-    },
-    dexterity: [],
-    constitution: [],
-    intelligence: [],
-    wisdom: [],
-    charsima: []
-  }
+  languages: null,
+  abilityBonuses: null,
+  startingProficiencies: null,
+  startingTraits: null,
 }
 
 export default (state = initialState, action) => {
@@ -42,57 +29,17 @@ export default (state = initialState, action) => {
     case SET_RACE:
       return {
         ...state,
-        race: action.payload
-      }
-    case SET_IMAGE:
-      return {
-        ...state,
-        image: action.payload
-      }
-    case SET_CLASS:
-      return {
-        ...state,
-        class: action.payload
-      }
-    case SET_BACKGROUND:
-      return {
-        ...state,
-        background: action.payload
-      }
-    case SET_ALIGNMENT:
-      return {
-        ...state,
-        alignment: action.payload
-      }
-    case SET_CHARACTERNAME:
-      return {
-        ...state,
-        characterName: action.payload
-      }
-    case SET_CHARACTERHEIGHT:
-      return {
-        ...state,
-        height: action.payload
-      }
-    case SET_CHARACTERWEIGHT:
-      return {
-        ...state,
-        weight: action.payload
-      }
-    case SET_CHARACTERSIZE:
-      return {
-        ...state,
-        size: action.payload
-      }
-    case SET_CHARACTERSPEED:
-      return {
-        ...state,
-        speed: action.payload
-      }
-    case SET_ABILITIES:
-      return {
-        ...state,
-        abilityModifiers: action.payload
+        race: action.payload.name,
+        speed: action.payload.speed,
+        size: action.payload,
+        abilityBonuses: action.payload.ability_bonuses,
+        ageDescription: action.payload.age,
+        alignmentDescription: action.payload.alignment,
+        size: action.payload.size,
+        startingProficiencies: action.payload.starting_proficiencies,
+        languages: action.payload.languages,
+        traits: action.payload.traits,
+        raceRefUrl: action.payload.url
       }
     default:
       return state

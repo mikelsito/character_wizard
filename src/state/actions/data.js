@@ -4,7 +4,7 @@ export const FETCH_RACES = 'FETCH_RACES'
 export const fetchRaces = payload => dispatch => {
   return dispatch({
     type: FETCH_RACES,
-    payload: findAllRaces().then(races => dispatch(receiveRaces(races)))
+    payload: findAllRaces('').then(races => dispatch(receiveRaces(races)))
   })
 }
 

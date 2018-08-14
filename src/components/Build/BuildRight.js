@@ -6,9 +6,6 @@ import { Link } from 'react-router-dom';
 import './BuildRight.css';
 
 class BuildRight extends Component {
-
-    componentDidMount() {
-    }
     
     render() {
         return (
@@ -19,7 +16,7 @@ class BuildRight extends Component {
                             {
                                 this.props.list ?
                                 this.props.list.map((item, index) => {
-                                    return <Card key={index + 1} title={item.name} />
+                                    return <Card key={index + 1} title={item.name} click={() => this.props.click(index+1)}/>
                                 }) : null
                             }
                         </div>

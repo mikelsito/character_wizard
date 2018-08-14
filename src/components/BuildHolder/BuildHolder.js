@@ -8,9 +8,6 @@ class BuildHolder extends Component {
             <div>
                 <Route path="/" component={Stage1}/>
                 <Route path="/stage2" component={Stage2}/>
-
-                {/* <Stage1 />
-                <Stage2 /> */}
             </div>
         )
     }
