@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Card from 'components/Build/Card';
+import Button from 'components/Common/Button';
+import { Link } from 'react-router-dom';
 
 import './BuildRight.css';
 
@@ -19,6 +21,14 @@ class BuildRight extends Component {
                             }
                         </div>
                     </div>
+                </div>
+                <div className="btn-holder">
+                {
+                    !this.props.selection ? null :
+                    <Link to={this.props.location}>
+                        <Button instruction="Next" />
+                    </Link>
+                }
                 </div>
             </div>
         )
