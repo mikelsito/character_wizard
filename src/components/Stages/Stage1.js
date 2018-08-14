@@ -17,7 +17,11 @@ class Stage1 extends Component {
                 <BuildLeft />
                 {
                     this.props.allRaces ? 
+<<<<<<< Updated upstream
                     <BuildRight list={this.props.allRaces} />
+=======
+                    <BuildRight selection={true} location="/stage2" list={this.props.allRaces} />
+>>>>>>> Stashed changes
                     : null
                 }
             </div>
