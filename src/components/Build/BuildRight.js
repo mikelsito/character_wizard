@@ -4,9 +4,6 @@ import Card from 'components/Build/Card';
 import './BuildRight.css';
 
 class BuildRight extends Component {
-
-    componentDidMount() {
-    }
     
     render() {
         return (
@@ -17,7 +14,7 @@ class BuildRight extends Component {
                             {
                                 this.props.list ?
                                 this.props.list.map((item, index) => {
-                                    return <Card key={index} dataurl={item.url} title={item.name} />
+                                    return <Card key={index + 1} title={item.name} click={() => this.props.click(index+1)}/>
                                 }) : null
                             }
                         </div>
