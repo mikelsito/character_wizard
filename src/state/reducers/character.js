@@ -32,6 +32,7 @@ export const initialState = {
   startingTraits: null,
   hitDie: null,
   startingEquipmentUrl: null,
+  spellcastingUrl: null,
   classLvlUrl: null,
 
 }
@@ -65,7 +66,8 @@ export default (state = initialState, action) => {
         savingThrows: action.payload.saving_throws,
         startingEquipmentUrl: action.payload.starting_equipment,
         classLvlUrl: action.payload.classLvlUrl,
-        subclasses: action.payload.subclasses
+        subclasses: action.payload.subclasses,
+        spellcastingUrl : action.payload.spellcasting
       }
     default:
       return state
