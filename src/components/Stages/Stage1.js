@@ -11,18 +11,13 @@ class Stage1 extends Component {
         this.props.actions.fetchRaces();
     }
 
-    clickHandler(arg) {
-        console.log("Number " + arg + " has been clicked!")
-    }
-
     render() {
         return (
             <div>
                 <BuildLeft />
                 {
-                    this.props.allRaces ? 
+                    !this.props.allRaces ? null :
                     <BuildRight selection={true} location="/stage2" list={this.props.allRaces} click={this.props.actions.fetchRace}/>
-                    : null
                 }
             </div>
         );
