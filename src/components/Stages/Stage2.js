@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { fetchClasses } from 'state/actions'
+import { fetchClasses, fetchClass } from 'state/actions'
 
 import { BuildLeft, BuildRight } from 'components/Build'
 
@@ -17,7 +17,7 @@ class Stage2 extends Component {
                 <BuildLeft />
                 {
                     !this.props.allClasses ? null :
-                    <BuildRight selection={true} location="/stage3" list={this.props.allClasses} />
+                    <BuildRight selection={true} location="/stage3" list={this.props.allClasses} click={this.props.actions.fetchClass} />
                 }
             </div>
         );
@@ -34,7 +34,8 @@ const mapDisptachToProps = dispatch => {
     return {
         actions: bindActionCreators(
             {
-                fetchClasses
+                fetchClasses,
+                fetchClass
             },
             dispatch
         )
