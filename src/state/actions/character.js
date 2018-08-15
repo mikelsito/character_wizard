@@ -1,4 +1,4 @@
-import { findSpecificRace,findSpecificClass } from 'external/5eAPI/queries';
+import { findSpecificRace, findSpecificClass } from 'external/5eAPI/queries';
 
 export const FETCH_RACE = 'FETCH_RACE'
 export const fetchRace = payload => dispatch => {
