@@ -1,9 +1,9 @@
 .BuildLeft {
     background: #f6f6f6;
     border-right: 3px solid #dddddd;
-    min-height: 100vh;
+    min-height: calc(100vh - 85px);
     width: 50%;
     position: fixed;
-    top: 0;
+    top: 85px;
     left: 0;
 }

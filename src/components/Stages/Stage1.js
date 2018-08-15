@@ -20,14 +20,8 @@ class Stage1 extends Component {
                     race={this.props.race}
                     />
                 {
-<<<<<<< HEAD
                     !this.props.allRaces ? null :
                     <BuildRight selection={true} location="/stage2" list={this.props.allRaces} click={this.props.actions.fetchRace}/>
-=======
-                    this.props.allRaces ? 
-                    <BuildRight selection={this.props.race} location="/stage2" list={this.props.allRaces} click={this.props.actions.fetchRace}/>
-                    : null
->>>>>>> added previous button
                 }
             </div>
         );

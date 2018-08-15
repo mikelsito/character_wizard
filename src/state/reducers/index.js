@@ -2,8 +2,10 @@
 import { combineReducers } from 'redux'
 import character from './character'
 import data from './data'
+import charOptions from './charOptions'
 
 export default combineReducers({
   character,
-  data
+  data,
+  charOptions
 })

@@ -1,9 +1,9 @@
 .BuildRight {
-    min-height: 100vh;
+    min-height: calc(100vh - 75px);
     width: 50%;
     background: #f6f6f6;
     position: absolute;
-    top: 0;
+    top: 75px;
     right: 0;
 }
 
