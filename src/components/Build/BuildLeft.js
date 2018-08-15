@@ -9,8 +9,12 @@ class BuildLeft extends Component {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col">
-                            <h1>test content</h1>
-                            <p>more test content goes here</p>
+                            <h1>{this.props.race}</h1>
+                            <p>
+                                {this.props.description}
+                                <br /><br />
+                                {this.props.descriptionTwo}
+                            </p>
                         </div>
                     </div>
                 </div>
