@@ -26,9 +26,9 @@ class BuildRight extends Component {
                     {
                         !this.props.selection ? null :
                         <div>
-                            <Link   to={this.props.previousLocation}>
+                            {/* <Link   to={this.props.location}>
                                 <Button instruction="Previous" />
-                            </Link>
+                            </Link> */}
                             <Link to={this.props.location}>
                                 <Button instruction="Next" />
                             </Link>

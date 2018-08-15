@@ -14,18 +14,18 @@ class Stage1 extends Component {
     render() {
         return (
             <div>
-                <BuildLeft />
+                <BuildLeft
+                    description={this.props.alignmentDescription}
+                    descriptionTwo={this.props.ageDescription}
+                    race={this.props.race}
+                    />
                 {
 <<<<<<< HEAD
                     !this.props.allRaces ? null :
                     <BuildRight selection={true} location="/stage2" list={this.props.allRaces} click={this.props.actions.fetchRace}/>
 =======
                     this.props.allRaces ? 
-<<<<<<< HEAD
-                    <BuildRight selection={true} location="/stage2" list={this.props.allRaces} click={this.props.actions.fetchRace}/>
-=======
-                    <BuildRight selection={true}   previousLocation="/" location="/stage2" list={this.props.allRaces} />
->>>>>>> added previous button
+                    <BuildRight selection={this.props.race} location="/stage2" list={this.props.allRaces} click={this.props.actions.fetchRace}/>
                     : null
 >>>>>>> added previous button
                 }
@@ -37,7 +37,9 @@ class Stage1 extends Component {
 const mapStateToProps = state => {
     return {
         allRaces: state.data.allRaces,
-        race: state.character.race
+        race: state.character.race,
+        alignmentDescription: state.character.alignmentDescription,
+        ageDescription: state.character.ageDescription
     }
 }
 
