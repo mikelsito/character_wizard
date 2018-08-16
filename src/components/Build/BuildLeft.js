@@ -10,6 +10,7 @@ class BuildLeft extends Component {
                     <div className="row">
                         <div className="col">
                             <h1>{this.props.title}</h1>
+                            <hr />
                             <p>
                                 {this.props.description}
                                 <br /><br />

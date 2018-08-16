@@ -1,6 +1,17 @@
 .Card {
     width: 100%;
-    padding: 10px;
-    background: #bfbfbf;
-    margin: 15px auto;
+    padding: 10px 15px 10px 10px;
+    background: #eddfca;
+    color: #562222;
+    margin: 25px auto;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0px 3px 27px -5px rgba(0,0,0,0.56);
+    /* transition: .25s; */
+}
+
+.Card:hover {
+    background: #562222;
+    color: #fff;
 }

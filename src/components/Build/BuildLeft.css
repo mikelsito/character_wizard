@@ -1,9 +1,17 @@
 .BuildLeft {
-    background: #f6f6f6;
-    border-right: 3px solid #dddddd;
     min-height: calc(100vh - 85px);
+    background: #fff;
     width: 50%;
     position: fixed;
     top: 85px;
     left: 0;
+    color: #677272;
+}
+
+.BuildLeft h1 {
+    color: #b52a2a;
+}
+
+.BuildLeft hr {
+    border-top: 1px solid #562222;
 }

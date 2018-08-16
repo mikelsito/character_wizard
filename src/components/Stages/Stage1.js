@@ -29,8 +29,10 @@ class Stage1 extends Component {
                             this.props.languageOptions ? "/optlanguage" :
                             "/stage2" 
                         }
+                        previousLocation="/"
                         list={this.props.allRaces}
                         click={this.props.actions.fetchRace}
+                        disabled={!this.props.race ? true : false}
                     />
                 }
             </div>
