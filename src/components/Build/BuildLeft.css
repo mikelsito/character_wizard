@@ -1,9 +1,11 @@
 .BuildLeft {
     min-height: calc(100vh - 85px);
+    background: #fff;
     width: 50%;
     position: fixed;
     top: 85px;
     left: 0;
+    color: #677272;
 }
 
 .BuildLeft h1 {
