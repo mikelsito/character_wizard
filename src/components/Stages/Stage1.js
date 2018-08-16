@@ -23,7 +23,11 @@ class Stage1 extends Component {
                     !this.props.allRaces ? null :
                     <BuildRight
                         selection={true}
-                        location={ !this.props.race ? "/stage1" : "/stage2" }
+                        location={ 
+                            !this.props.race ? "/stage1" : 
+                            this.props.languageOptions ? "/optlanguage" :
+                            "/stage2" 
+                        }
                         list={this.props.allRaces}
                         click={this.props.actions.fetchRace}
                     />
@@ -38,7 +42,8 @@ const mapStateToProps = state => {
         allRaces: state.data.allRaces,
         race: state.character.race,
         alignmentDescription: state.character.alignmentDescription,
-        ageDescription: state.character.ageDescription
+        ageDescription: state.character.ageDescription,
+        languageOptions: state.data.languageOptions
     }
 }
 
