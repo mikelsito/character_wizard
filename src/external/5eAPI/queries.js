@@ -11,15 +11,6 @@ export const findAllRaces = () => {
   })
 }
 
-export const findSpecificRace = (query) => {
-  let queryURL = urlBaseSegment + 'races/' + query;
-
-  return axios.get(queryURL)
-  .then(res => {
-    return res.data
-  })
-}
-
 export const findAllClasses = () => {
   let queryURL = urlBaseSegment + 'classes';
 
@@ -29,11 +20,36 @@ export const findAllClasses = () => {
   })
 }
 
-export const findSpecificClass = (query) => {
-  let queryURL = urlBaseSegment + 'classes/' + query;
-
-  return axios.get(queryURL)
+export const queryApi = (query) => {
+  return axios.get(query)
   .then(res => {
     return res.data
   })
 }
+
+// export const findSpecificRace = (query) => {
+//   let queryURL = urlBaseSegment + 'races/' + query;
+
+//   return axios.get(queryURL)
+//   .then(res => {
+//     return res.data
+//   })
+// }
+
+// export const findSpecificClass = (query) => {
+//   let queryURL = urlBaseSegment + 'classes/' + query;
+
+//   return axios.get(queryURL)
+//   .then(res => {
+//     return res.data
+//   })
+// }
+
+// export const findLanguage = (query) => {
+//   let queryURL = urlBaseSegment + 'languages/' + query;
+
+//   return axios.get(queryURL)
+//   .then(res => {
+//     return res.data
+//   })
+// }

@@ -15,8 +15,8 @@ class BuildRight extends Component {
                         <div className="col">
                             {
                                 this.props.list ?
-                                this.props.list.map((item, index) => {
-                                    return <Card key={index + 1} title={item.name} click={() => this.props.click(index+1)}/>
+                                this.props.list.map((item) => {
+                                    return <Card key={item.url} title={item.name} click={() => this.props.click(item.url)}/>
                                 }) : null
                             }
                         </div>

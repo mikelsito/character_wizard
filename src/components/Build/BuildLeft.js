@@ -14,6 +14,8 @@ class BuildLeft extends Component {
                                 {this.props.description}
                                 <br /><br />
                                 {this.props.descriptionTwo}
+                                <br /><br />
+                                {this.props.descriptionThree}
                             </p>
                         </div>
                     </div>
