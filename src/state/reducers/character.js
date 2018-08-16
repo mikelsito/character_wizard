@@ -37,7 +37,7 @@ export default (state = initialState, action) => {
         size: action.payload,
         abilityBonuses: action.payload.ability_bonuses,
         size: action.payload.size,
-        // languages: action.payload.languages,
+        languages: action.payload.languages,
         traits: action.payload.traits
       }
     case SET_CLASS: 
@@ -50,7 +50,7 @@ export default (state = initialState, action) => {
     case SET_LANGUAGE: 
       return {
         ...state,
-        languages: [...this.languages, action.payload]
+        languages: [...state.languages, action.payload]
       }
     default:
       return state

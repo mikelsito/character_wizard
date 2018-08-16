@@ -11,7 +11,7 @@ class OptLanguage extends Component {
     return (
       <div>
         <BuildLeft title={"Choose " + this.props.languageOptions.choose + " Languages"}/>
-        <BuildRight selection={true} location='/stage2' list={this.props.languageOptions.from} click={this.props.fetchLanguage}/>
+        <BuildRight selection={true} location='/stage2' list={this.props.languageOptions.from} click={this.props.actions.fetchLanguage}/>
       </div>
     )
   }
