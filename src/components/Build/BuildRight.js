@@ -25,7 +25,10 @@ class BuildRight extends Component {
                 <div className="btn-holder">
                     <div>
                         <Link to={this.props.location}>
-                            <Button className="Poop" instruction="Next" />
+                            <Button
+                                className="Poop"
+                                instruction="Next"
+                                />
                         </Link>
                     </div>
                 </div>
