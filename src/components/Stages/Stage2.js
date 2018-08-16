@@ -14,7 +14,7 @@ class Stage2 extends Component {
     render() {
         return (
             <div>
-                <BuildLeft />
+                <BuildLeft title={this.props.class}/>
                 {
                     !this.props.allClasses ? null :
                     <BuildRight selection={true} location="/stage3" list={this.props.allClasses} click={this.props.actions.fetchClass} />
@@ -26,7 +26,8 @@ class Stage2 extends Component {
 
 const mapStateToProps = state => {
     return {
-        allClasses: state.data.allClasses
+        allClasses: state.data.allClasses,
+        class: state.character.class
     }
 }
 
