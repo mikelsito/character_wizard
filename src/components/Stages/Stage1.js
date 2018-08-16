@@ -21,7 +21,12 @@ class Stage1 extends Component {
                     />
                 {
                     !this.props.allRaces ? null :
-                    <BuildRight selection={true} location="/stage2" list={this.props.allRaces} click={this.props.actions.fetchRace}/>
+                    <BuildRight
+                        selection={true}
+                        location={ !this.props.race ? "/stage1" : "/stage2" }
+                        list={this.props.allRaces}
+                        click={this.props.actions.fetchRace}
+                    />
                 }
             </div>
         );
