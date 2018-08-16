@@ -1,6 +1,7 @@
 import {
   SET_RACE,
-  SET_CLASS
+  SET_CLASS,
+  SET_LANGUAGE
 } from '../actions'
 
 export const initialState = {
@@ -36,7 +37,7 @@ export default (state = initialState, action) => {
         size: action.payload,
         abilityBonuses: action.payload.ability_bonuses,
         size: action.payload.size,
-        languages: action.payload.languages,
+        // languages: action.payload.languages,
         traits: action.payload.traits
       }
     case SET_CLASS: 
@@ -45,6 +46,11 @@ export default (state = initialState, action) => {
         class: action.payload.name,
         hitDie: action.payload.hit_die,
         savingThrows: action.payload.saving_throws,
+      }
+    case SET_LANGUAGE: 
+      return {
+        ...state,
+        languages: [...this.languages, action.payload]
       }
     default:
       return state

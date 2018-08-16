@@ -17,6 +17,7 @@ class Stage1 extends Component {
                 <BuildLeft
                     description={this.props.alignmentDescription}
                     descriptionTwo={this.props.ageDescription}
+                    descriptionThree={this.props.lanuageDescription}
                     title={this.props.race}
                     />
                 {
@@ -41,8 +42,9 @@ const mapStateToProps = state => {
     return {
         allRaces: state.data.allRaces,
         race: state.character.race,
-        alignmentDescription: state.character.alignmentDescription,
-        ageDescription: state.character.ageDescription,
+        lanuageDescription: state.data.languageDescription,
+        alignmentDescription: state.data.alignmentDescription,
+        ageDescription: state.data.ageDescription,
         languageOptions: state.data.languageOptions
     }
 }
