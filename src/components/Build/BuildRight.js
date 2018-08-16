@@ -19,16 +19,25 @@ class BuildRight extends Component {
                                     return <Card key={item.url} title={item.name} click={() => this.props.click(item.url)}/>
                                 }) : null
                             }
+                            <div className="spacer"></div>
                         </div>
                     </div>
                 </div>
                 <div className="btn-holder">
                     <div>
+                        <Link to={this.props.previousLocation}>
+                            <Button
+                                className="btn-secondary"
+                                instruction="Previous Step"
+                                disabled={false}
+                            />
+                        </Link>
                         <Link to={this.props.location}>
                             <Button
-                                className="Poop"
-                                instruction="Next"
-                                />
+                                className="btn-primary"
+                                instruction="Next Step"
+                                disabled={this.props.disabled}
+                            />
                         </Link>
                     </div>
                 </div>

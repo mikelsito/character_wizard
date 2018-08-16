@@ -3,7 +3,7 @@ import 'components/Common/Button.css';
 
 const Button = props => {
     return (
-        <button className={props.className + ' btn btn-primary'}>{props.instruction}</button>
+        <button disabled={props.disabled} className={props.className + ' btn'}>{props.instruction}</button>
     )
 }
 

@@ -1,0 +1,33 @@
+.btn-holder .btn {
+    margin: 0 15px;
+}
+
+.btn-primary {
+    background: #b52a2a;
+    border-color: #b52a2a;
+}
+
+.btn-primary:hover {
+    background: #562222;
+    border-color: #562222;
+}
+
+.btn-primary:disabled {
+    background: #a5a5a5;
+    border-color: #a5a5a5;
+}
+
+.btn-secondary {
+    background: #677272;
+    border-color: #677272;
+}
+
+.btn-secondary:hover {
+    background: #828e8d;
+    border-color: #828e8d;
+}
+
+.btn-secondary:disabled {
+    background: #677272;
+    border-color: #677272;
+}
