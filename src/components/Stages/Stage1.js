@@ -17,7 +17,7 @@ class Stage1 extends Component {
                 <BuildLeft
                     description={this.props.alignmentDescription}
                     descriptionTwo={this.props.ageDescription}
-                    race={this.props.race}
+                    title={this.props.race}
                     />
                 {
                     !this.props.allRaces ? null :
